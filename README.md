@@ -73,7 +73,7 @@ Nesta etapa, desenvolvemos o protótipo de alta fidelidade do SentraVision, tang
 
 ### 🔗 Links Importantes
 
-* **Protótipo Interativo (Figma):** https://www.figma.com/design/NPKZlvI3XsrA2Tiw77wimS/Sprint-2---ES?node-id=0-1&t=E4xMiBK5u3seOEny-1
+* [Acessar a identidade visual do projeto no Figma](https://www.figma.com/design/NPKZlvI3XsrA2Tiw77wimS/Sprint-2---ES?node-id=0-1&t=NuW2fSCNox79EamV-1)
 
 ### 🧭 Guia de Navegação do Protótipo
 
@@ -103,3 +103,28 @@ O protótipo navegável reflete diretamente as regras de negócio mapeadas na pr
 * **Alerta de Riscos:** Reflete os caminhos alternativos do diagrama de atividades (*"Usuário com todo o EPI?" -> Não*), formalizando o bloqueio ou notificação em fichas de ocorrência detalhadas.
 * **Cadastro (Colaborador):** Representa a entidade geradora dos "dados de EPIs utilizados/faltantes". Demonstra como o sistema carrega o perfil do funcionário para checar a exigência específica de equipamentos.
 * **Relatório de Conformidade:** Materializa a última etapa do fluxo do diagrama de atividades (*"Geração de relatório de conformidade"*), convertendo os dados das validações em gráficos gerenciais consolidados (gráfico de rosca e de linhas).
+
+---
+
+## 🚀 Sprint 3: Evolução do Protótipo e Gestão Ágil
+
+Na Sprint 3, expandimos nosso protótipo de alta fidelidade incorporando fluxos secundários vitais para a operação do sistema e implementamos a gestão ágil do projeto via Scrum.
+
+### 🎨 Evolução de UX/UI (Novas Telas)
+
+Duas novas telas foram adicionadas ao fluxo, garantindo segurança e utilidade prática ao sistema:
+
+1. **Tela de Login e Autenticação (Acesso Seguro):** Como o sistema lida com imagens de funcionários e dados sensíveis de infrações, adicionamos autenticação com campo para Segundo Fator (A2F). O acesso ao Dashboard agora é estritamente restrito a supervisores logados, atendendo aos princípios de segurança e privacidade da LGPD.
+2. **Tratativa de Ocorrência (Ação Corretiva):** Anteriormente, o alerta apenas notificava o risco de forma passiva. Agora, o supervisor possui uma tela para registrar a ação tomada (ex: "EPI Fornecido / Substituído", "Advertência Formalizada" ou "Falso Positivo da IA"). Isso fecha o ciclo do caso de uso, tornando o sistema verdadeiramente acionável no chão de fábrica.
+
+### 🏗️ Refinamento da Arquitetura Técnica
+
+Ao longo do desenvolvimento das Sprints, refinamos a arquitetura do SentraVision para garantir o processamento eficiente das imagens em tempo real. A arquitetura atual divide-se em três camadas principais:
+
+* **1. Edge/Captura:** Câmeras IP industriais capturam o feed de vídeo (via protocolo RTSP) diretamente no chão de fábrica.
+* **2. Processamento (Backend/Visão):** Um servidor local executa scripts em **Python**. Utilizamos **OpenCV** para a extração veloz de frames e o modelo **YOLOv8** para a inferência (detecção das *bounding boxes* de EPIs e operários). A escolha de um servidor local minimiza gargalos de latência de rede externa.
+* **3. Gestão e Interface:** Os dados de infrações processados são enviados via API para o banco de dados e consumidos pelo front-end, refletindo os alertas e métricas no Dashboard desenhado no Figma.
+
+### 📅 Board Trello
+
+* [Board do Trello](https://trello.com/invite/b/6a9d70d9e59423228faba1af/ATTI35f28d4a79ca73d8ad730122b957514e48956915/sentravision-sprint)
