@@ -6,11 +6,12 @@
 
 ## 👥 Integrantes
 
-* **Breno Ferreira e Silva** - RM 555503
-* **Enzo Raddatz** - RM 556312
-* **Felipe Chiozzotto Gozzani** - RM 554715
-* **Rafael Lopes Bestilleiro Benedetti** - RM 5554781
-* **Vinicius de Abreu Fernandes** - RM 558184
+- **Breno Ferreira e Silva** - RM 555503
+- **Enzo Raddatz** - RM 556312
+- **Felipe Chiozzotto Gozzani** - RM 554715
+- **Rafael Lopes Bestilleiro Benedetti** - RM 554781
+- **Vinicius de Abreu Fernandes** - RM 558184
+- **Pedro Gonçalves**
 
 ---
 
@@ -32,25 +33,14 @@ Caso o sistema detecte a ausência de algum EPI, ele poderá emitir alertas para
 
 ---
 
-## 🛠️ Tecnologias Selecionadas
+## 🛠️ Tecnologias Selecionadas e Justificativa
 
-* **Python**
-* **YOLOv8**
-* **OpenCV**
-* **Visão Computacional**
-* **Inteligência Artificial**
+Nesta etapa final (Sprint 4), optamos por uma arquitetura focada em processamento em nuvem para a prova de conceito (PoC), garantindo velocidade na inferência da IA sem a necessidade de configurações complexas de infraestrutura local.
 
----
-
-## ⚙️ Justificativa Técnica
-
-O uso do **Python** foi escolhido por ser uma linguagem amplamente utilizada no desenvolvimento de Inteligência Artificial, oferecendo diversas bibliotecas eficientes e facilidade de integração entre sistemas.
-
-O modelo **YOLOv8 (You Only Look Once)** será utilizado por sua alta velocidade e precisão no reconhecimento de objetos em tempo real. Essa tecnologia é ideal para identificar EPIs em imagens e vídeos, permitindo um monitoramento rápido e eficiente dentro das fábricas.
-
-Além disso, o **OpenCV** auxiliará no processamento das imagens capturadas pelas câmeras, enquanto as técnicas de **Visão Computacional** permitirão que o sistema interprete o ambiente de forma inteligente.
-
-Com essas tecnologias, o SentraVision busca oferecer uma solução moderna, automatizada e eficiente para aumentar a segurança dos trabalhadores e auxiliar empresas na prevenção de acidentes industriais.
+- **Python:** Linguagem base para o pipeline de Inteligência Artificial e processamento de dados.
+- **YOLOv8 (Ultralytics):** Modelo de alta velocidade para detecção de objetos (*You Only Look Once*), configurado para identificar EPIs em tempo real nas imagens capturadas.
+- **OpenCV:** Utilizado para a manipulação das imagens e extração de frames.
+- **Google Colab:** Ambiente de execução em nuvem utilizado para hospedar o código, processar as imagens via GPU (T4) e exibir os resultados interativos (Dashboards), substituindo a necessidade de um backend/banco de dados local para esta PoC.
 
 ---
 
@@ -67,64 +57,39 @@ Com essas tecnologias, o SentraVision busca oferecer uma solução moderna, auto
 
 ---
 
-## 🚀 Sprint 2: Prototipação Funcional e Navegável (UX/UI)
+## 🚀 Resumo das Sprints
 
-Nesta etapa, desenvolvemos o protótipo de alta fidelidade do SentraVision, tangibilizando a solução proposta para o ambiente da Metaindústria. O foco principal foi traduzir a modelagem técnica da Sprint 1 em uma interface funcional, focada na usabilidade direta do operador ou supervisor industrial.
+### Sprint 1: Modelagem e Casos de Uso
+Levantamento do problema (ausência de EPIs na Metaindústria), definição da proposta de solução com IA e construção dos diagramas estruturais iniciais (Casos de Uso, Atividades e Classes).
 
-### 🔗 Links Importantes
+### Sprint 2: Prototipação Funcional e Navegável (UX/UI)
+Desenvolvimento do protótipo de alta fidelidade no Figma, focado na ergonomia industrial (Layout Vertical/Dark Mode).
+- **Telas Mapeadas:** Dashboard de Monitoramento (IA em tempo real), Alerta de Riscos (Infrações), Cadastro de EPI e Relatório de Conformidade.
+- 🔗 **Link do Protótipo:** [Acessar a identidade visual do projeto no Figma](https://www.figma.com/design/NPKZlvI3XsrA2Tiw77wimS/Sprint-2---ES?node-id=0-1&t=NuW2fSCNox79EamV-1)
 
-* [Acessar a identidade visual do projeto no Figma](https://www.figma.com/design/NPKZlvI3XsrA2Tiw77wimS/Sprint-2---ES?node-id=0-1&t=NuW2fSCNox79EamV-1)
+### Sprint 3: Evolução do Protótipo e Gestão Ágil
+Expansão do protótipo incorporando fluxos secundários vitais:
+1. **Tela de Login (A2F):** Acesso restrito a supervisores logados (adequação LGPD).
+2. **Tratativa de Ocorrência:** Tela para o supervisor registrar a ação tomada ("EPI Fornecido", "Advertência", etc.), fechando o ciclo do caso de uso.
+- Implementação da gestão ágil do projeto via **Scrum** (Quadro Trello).
 
-### 🧭 Guia de Navegação do Protótipo
-
-O protótipo foi estruturado com uma navegação linear e focada, permitindo que o usuário avance pelos módulos principais de forma fluida. O fluxo de teste segue:
-1.  **Dashboard e Monitoramento:** A tela inicial apresenta o monitoramento ao vivo das câmeras, destacando os equipamentos essenciais (como capacete, óculos e máscara). Clique em "Avançar" no canto inferior direito para prosseguir.
-2.  **Alerta de Riscos:** Visualize os "cards" com o detalhamento das infrações registradas. Utilize os botões inferiores para "Voltar" ou "Avançar".
-3.  **Cadastro e Gestão de EPI (Colaborador):** Analise o perfil do funcionário e a listagem de EPIs obrigatórios para a sua função específica.
-4.  **Relatório de Conformidade:** Acesse o painel analítico final com os gráficos de desempenho e métricas gerais do sistema.
-
-### 🎨 Documentação de Design (Decisões de UX/UI)
-
-O design da interface rompeu com a complexidade de sistemas tradicionais e focou na agilidade e clareza visual, adotando as seguintes premissas ergonômicas para a indústria:
-
-* **Layout Vertical e Orientado:** A interface foi modelada em formato retrato (portrait), ideal para uso em smartphones corporativos entregues aos supervisores ou tótens verticais instalados próximos às catracas. 
-* **Navegação Linear e Botões de Ação Rápida:** Substituímos menus complexos (hambúrguer ou barras laterais) por ações explícitas de "Avançar" e "Voltar" na base da tela, evitando toques acidentais e reduzindo a curva de aprendizado.
-* **Componentes em Pílula (Pills):** O uso de componentes arredondados para listar os EPIs cria um mapeamento visual imediato. A paleta é estritamente semântica:
-    * **Verde:** Equipamento presente e em conformidade.
-    * **Vermelho/Laranja:** Alerta de ausência/infração (destaque imediato).
-    * **Cinza:** Equipamento não exigido para aquela função (reduzindo a poluição visual).
-* **Contraste e Foco (Dark Mode):** O fundo cinza chumbo contrasta agressivamente com o cabeçalho verde de localização e as marcações das *bounding boxes* geradas pela IA, garantindo que o status da operação seja a primeira coisa que o usuário note.
-
-### 🔄 Mapeamento: Telas e Diagramas da Sprint 1
-
-O protótipo navegável reflete diretamente as regras de negócio mapeadas na primeira etapa do projeto:
-
-* **Dashboard de Monitoramento:** Materializa o caso de uso *"Análise da imagem via IA"*, exibindo o processamento em tempo real das câmeras 1 e 2 e as análises das *bounding boxes*.
-* **Alerta de Riscos:** Reflete os caminhos alternativos do diagrama de atividades (*"Usuário com todo o EPI?" -> Não*), formalizando o bloqueio ou notificação em fichas de ocorrência detalhadas.
-* **Cadastro (Colaborador):** Representa a entidade geradora dos "dados de EPIs utilizados/faltantes". Demonstra como o sistema carrega o perfil do funcionário para checar a exigência específica de equipamentos.
-* **Relatório de Conformidade:** Materializa a última etapa do fluxo do diagrama de atividades (*"Geração de relatório de conformidade"*), convertendo os dados das validações em gráficos gerenciais consolidados (gráfico de rosca e de linhas).
+### Sprint 4 (Final): Validação da IA e Entrega da PoC
+Consolidação dos scripts de Visão Computacional (YOLOv8) e integração do fluxo do Figma diretamente no **Google Colab** utilizando `ipywidgets`. A solução agora permite simular o fluxo completo de detecção, emissão de alertas e tratativa de ocorrências sem a dependência de um banco de dados relacional.
 
 ---
 
-## 🚀 Sprint 3: Evolução do Protótipo e Gestão Ágil
+## 💻 Manual de Execução (Como testar a solução)
 
-Na Sprint 3, expandimos nosso protótipo de alta fidelidade incorporando fluxos secundários vitais para a operação do sistema e implementamos a gestão ágil do projeto via Scrum.
+Para que os avaliadores possam testar o SentraVision de forma prática, estruturamos o código em um Notebook interativo.
 
-### 🎨 Evolução de UX/UI (Novas Telas)
+1. **Acesse o Google Colab:**
+2. **Ative a Aceleração por GPU:** No menu superior do Colab, clique em `Ambiente de execução` > `Alterar o tipo de ambiente de execução` e selecione **T4 GPU** (Hardware accelerator).
+3. **Instale as Dependências:** Execute a primeira célula de código para instalar o `ultralytics` (YOLO) e o `ipywidgets`.
+4. **Carregue o Modelo:** Execute as células seguintes para carregar o modelo treinado `.pt` (disponível neste repositório).
+5. **Realize a Inferência:** A última célula processará a imagem/vídeo de teste (já embutida no repositório) e exibirá a interface interativa com os EPIs detectados e mapeados (*bounding boxes*).
 
-Duas novas telas foram adicionadas ao fluxo, garantindo segurança e utilidade prática ao sistema:
+---
 
-1. **Tela de Login e Autenticação (Acesso Seguro):** Como o sistema lida com imagens de funcionários e dados sensíveis de infrações, adicionamos autenticação com campo para Segundo Fator (A2F). O acesso ao Dashboard agora é estritamente restrito a supervisores logados, atendendo aos princípios de segurança e privacidade da LGPD.
-2. **Tratativa de Ocorrência (Ação Corretiva):** Anteriormente, o alerta apenas notificava o risco de forma passiva. Agora, o supervisor possui uma tela para registrar a ação tomada (ex: "EPI Fornecido / Substituído", "Advertência Formalizada" ou "Falso Positivo da IA"). Isso fecha o ciclo do caso de uso, tornando o sistema verdadeiramente acionável no chão de fábrica.
+## 🔗 Links Finais do Projeto
 
-### 🏗️ Refinamento da Arquitetura Técnica
-
-Ao longo do desenvolvimento das Sprints, refinamos a arquitetura do SentraVision para garantir o processamento eficiente das imagens em tempo real. A arquitetura atual divide-se em três camadas principais:
-
-* **1. Edge/Captura:** Câmeras IP industriais capturam o feed de vídeo (via protocolo RTSP) diretamente no chão de fábrica.
-* **2. Processamento (Backend/Visão):** Um servidor local executa scripts em **Python**. Utilizamos **OpenCV** para a extração veloz de frames e o modelo **YOLOv8** para a inferência (detecção das *bounding boxes* de EPIs e operários). A escolha de um servidor local minimiza gargalos de latência de rede externa.
-* **3. Gestão e Interface:** Os dados de infrações processados são enviados via API para o banco de dados e consumidos pelo front-end, refletindo os alertas e métricas no Dashboard desenhado no Figma.
-
-### 📅 Board Trello
-
-* [Board do Trello](https://trello.com/invite/b/6a9d70d9e59423228faba1af/ATTI35f28d4a79ca73d8ad730122b957514e48956915/sentravision-sprint)
+- **Board Trello (Gestão Ágil):** [TRELLO](https://trello.com/invite/b/6a9d70d9e59423228faba1af/ATTI35f28d4a79ca73d8ad730122b957514e48956915/sentravision-sprint)
