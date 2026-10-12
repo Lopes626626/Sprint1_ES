@@ -11,7 +11,6 @@
 - **Felipe Chiozzotto Gozzani** - RM 554715
 - **Rafael Lopes Bestilleiro Benedetti** - RM 554781
 - **Vinicius de Abreu Fernandes** - RM 558184
-- **Pedro Gonçalves**
 
 ---
 
