@@ -86,7 +86,8 @@ Para que os avaliadores possam testar o SentraVision de forma prática, estrutur
 2. **Ative a Aceleração por GPU:** No menu superior do Colab, clique em `Ambiente de execução` > `Alterar o tipo de ambiente de execução` e selecione **T4 GPU** (Hardware accelerator).
 3. **Instale as Dependências:** Execute a primeira célula de código para instalar o `ultralytics` (YOLO) e o `ipywidgets`.
 4. **Carregue o Modelo:** Execute as células seguintes para carregar o modelo treinado `.pt` (disponível neste repositório).
-5. **Realize a Inferência:** A última célula processará a imagem/vídeo de teste (já embutida no repositório) e exibirá a interface interativa com os EPIs detectados e mapeados (*bounding boxes*).
+5. **Adicione uma imagem:** Adicione uma imagem e coloca o caminho no código para poder fazer o reconhecimento de EPI.
+6. **Realize a Inferência:** A última célula processará a imagem/vídeo de teste (já embutida no repositório) e exibirá a interface interativa com os EPIs detectados e mapeados (*bounding boxes*).
 
 ---
 
